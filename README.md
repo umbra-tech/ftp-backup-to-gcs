@@ -11,7 +11,7 @@ You will fine the lifecycle policy already created in the root folder.  Right no
 gsutil lifecycle set gcs-lifecycle.json gs://YOUR_BUCKET_NAME/
 ```
 
-## Create GCP secret with FTP credentials
+### Create GCP secret with FTP credentials
 First, create a file with your FTP creds that just looks like this:
 ```
 server=
