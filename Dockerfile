@@ -1,7 +1,7 @@
 FROM google/cloud-sdk:slim
 
 # Install lftp
-RUN apt-get update && apt-get install -y lftp 
+RUN apt-get update && apt-get install -y lftp python3 
 # && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory in the container
@@ -17,4 +17,4 @@ RUN chmod +x /app/
 RUN pip install -r requirements.txt --break-system-packages
 
 # Run the script when the container launches
-CMD ["sh", "-c", "python", "/app/conan-backup.py", "--gcs_bucket=${GCS_BUCKET}", "--secret_name=${SECRET_NAME}", "--remote_dir=${REMOTE_DIR}", "--local-dir=${LOCAL_DIR}", "--project-id=${PROJECT_ID}"]
+CMD python3 /app/gcs-ftp-backup.py --gcs_bucket=${GCS_BUCKET} --secret_name=${SECRET_NAME} --remote_dir=${REMOTE_DIR} --local_dir=${LOCAL_DIR} --project_id=${PROJECT_ID}
