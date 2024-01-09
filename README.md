@@ -10,9 +10,9 @@ The following serries of commands will help you to build a completely automated 
     ```
 
 * Authenticate to GCP
-```
-gcloud auth login
-```
+    ```
+    gcloud auth login
+    ```
 
 * Set Variables:
     (The BACKUP_SCHEDULE is set in unix cron format https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules#defining_the_job_schedule)
